@@ -2,7 +2,7 @@
   <div class="header">
     <%= form_with(url: root_path, method: :get, data: {controller:'search', search_target:'form', turbo_frame: "results", turbo_action:'advance', action: 'input->search#submit_query'} ) do |form| %>
       <div class="d-flex justify-content-center">
-        <%= form.text_field :query, :class => "form-control search-box",:placeholder => "What are you looking for ?" , :value => @query %>
+        <%= form.text_field :query, :authenticity_token => false, :class => "form-control search-box",:placeholder => "What are you looking for ?" , :value => @query %>
       </div>
     <% end %>
   </div>
