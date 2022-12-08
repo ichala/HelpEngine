@@ -4,7 +4,7 @@ class Search < ApplicationRecord
   # user_ip must be present
   validates :user_ip, presence: true
 
-  def similarity?(text)
-    Search.where('similarity(query, ?) > 0.4', text).exists?
+  def similarity?(text,ip)
+    Search.where('similarity(query, ?) > 0.4 AND user_ip= ?', text , ip).exists?
   end
 end
