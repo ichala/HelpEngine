@@ -10,6 +10,6 @@ export default class extends Controller {
 
   debounce(callback) {
     //Add a delay to the search query
-    this.timeout = setTimeout(callback, 300);
+    this.timeout = setTimeout(callback, 400);
   }
 }

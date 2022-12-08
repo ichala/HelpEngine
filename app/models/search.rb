@@ -6,6 +6,6 @@ class Search < ApplicationRecord
 
 
     def similarity?(text)
-        Search.where("similarity(query, ?) > 0.5", text).exists?
+        Search.where("similarity(query, ?) > 0.4", text).exists?
     end
 end

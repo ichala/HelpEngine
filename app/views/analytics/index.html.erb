@@ -1,2 +1,54 @@
-<h1>Analytics#index</h1>
-<p>Find me in app/views/analytics/index.html.erb</p>
+
+
+<div class="container mt-3 details bg-white rounded shadow p-3">
+  <ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      Most Active User
+      <span class="badge bg-info"> <%= @top_active_users[0][0] %></span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      Last Query
+      <span > <%= Search.last.query %></span>
+    </li>
+  </ul>
+   <div class="card mt-5">
+    <h5 class="card-header">Trending Searches</h5>
+    <div class="card-body d-flex justify-content-center">
+      <%= pie_chart(@searching_trends) %>
+    </div>
+  </div>
+  <div class="card mt-5">
+    <h5 class="card-header">Searches Per Day</h5>
+    <div class="card-body d-flex justify-content-center">
+      <%= line_chart(@searches_per_day ,  ytitle: "Searches") %>
+    </div>
+  </div>
+  <div class="card mt-5">
+    <h5 class="card-header">Top Active Users</h5>
+    <div class="card-body d-flex justify-content-center">
+     <%= bar_chart(@top_active_users ,  ytitle: "IP Address") %>
+    </div>
+  </div>
+   <div class="card mt-5">
+    <h5 class="card-header">Recent Searches by you</h5>
+    <div class="card-body d-flex justify-content-center">
+   <table class="table">
+  <thead>
+
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Query</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @latest_searches_by_current_ip.each do |search| %>
+    <tr>
+      <th scope="row"><%= search.id %> </th>
+      <td><%= search.query %></td>
+    </tr>
+   <%end%>
+  </tbody>
+</table>
+  </div>
+ 
+</div>
