@@ -12,6 +12,9 @@ gem 'dotenv-rails'
 # Install Faker to generate fake data
 gem 'faker'
 
+# Install chartkick to generate charts
+gem "chartkick"
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
