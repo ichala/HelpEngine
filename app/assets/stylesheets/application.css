@@ -38,3 +38,8 @@ body {
     margin-top: -50px;
     width: 900px;
  }
+
+ mark {
+    color: rgb(36, 111, 8);
+    background-color: rgb(255, 255, 0);
+  }
