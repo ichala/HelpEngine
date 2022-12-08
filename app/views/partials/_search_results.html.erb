@@ -3,7 +3,6 @@
   <% @articles.each do |article| %>
     <div class="card mt-3">
       <div class="card-header">
-      
         <h5 class="card-title"><%= highlight(article.title, query) %></h5>
       </div>
       <div class="card-body">
@@ -12,5 +11,7 @@
     </div>
   <% end %>
 <% else %>
-  <h1 class="display-5">No Results Found</h1>
+  <div class="alert alert-danger" role="alert">
+    No Results Found
+  </div>
 <% end %>
