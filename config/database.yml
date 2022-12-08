@@ -85,6 +85,4 @@ test:
 #
 production:
   <<: *default
-  database: HelpEngine_production
-  username: HelpEngine
-  password: <%= ENV["HELPENGINE_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
