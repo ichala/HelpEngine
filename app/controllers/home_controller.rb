@@ -1,7 +1,8 @@
 class HomeController < ApplicationController
 
   def index
-    @articles = Article.search_by_title(params)
+    @query = params[:query]
+    @articles = Article.search_articles(params)
   end
 
 

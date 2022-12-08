@@ -3,10 +3,11 @@
   <% @articles.each do |article| %>
     <div class="card mt-3">
       <div class="card-header">
-        <h5 class="card-title"><%= article.title %></h5>
+      
+        <h5 class="card-title"><%= highlight(article.title, query) %></h5>
       </div>
       <div class="card-body">
-        <p class="card-text"><%= article.content %></p>
+        <p class="card-text"><%= highlight(article.content, query) %></p>
         <a href="#" class="btn btn-primary justify-self-end">Go somewhere</a>
       </div>
     </div>

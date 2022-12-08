@@ -2,14 +2,14 @@
   <div class="header">
     <%= form_with(url: root_path, method: :get, data: {controller:'search', search_target:'form', turbo_frame: "results", turbo_action:'advance', action: 'input->search#submit_query'} ) do |form| %>
       <div class="d-flex justify-content-center">
-        <%= form.text_field :query, :class => "form-control search-box",:placeholder => "What are you looking for ?" %>
+        <%= form.text_field :query, :class => "form-control search-box",:placeholder => "What are you looking for ?" , :value => @query %>
       </div>
     <% end %>
   </div>
   <div class="results-container d-flex flex-column justify-content-center align-items-center">
     <div class="results">
       <%= turbo_frame_tag "results" do %>
-      <%= render partial: 'partials/search_results', locals: { articles: @articles } %>
+      <%= render partial: 'partials/search_results', locals: { articles: @articles , query: @query} %>
       <% end %>
     </div>
   </div>
