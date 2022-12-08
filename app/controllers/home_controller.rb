@@ -18,5 +18,10 @@ class HomeController < ApplicationController
     end
   end
 
+  def search_params
+    params.require(:query).permit(:query)
+  end 
+
+
 
 end
