@@ -1,2 +1,23 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="main " >
+  <div class="header">
+    <%= form_with(url: root_path, method: "POST" ) do |form| %>
+      <div class="d-flex justify-content-center">
+        <%= form.text_field :query, :class => "form-control search-box",:placeholder => "What are you looking for ?" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="results-container d-flex flex-column justify-content-center align-items-center">
+    <div class="results">
+      <h1 class="display-5">Search Results :</h1>
+      <div class="card mt-3">
+        <div class="card-header">
+           <h5 class="card-title">  Title</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary justify-self-end">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
