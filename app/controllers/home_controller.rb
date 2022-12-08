@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
     @articles = Article.search_articles(params)
-    ip = request.ip
+    ip = request.remote_ip
     @query = params[:query]
     save_search(@query, ip)
   end
