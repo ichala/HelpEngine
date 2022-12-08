@@ -11,7 +11,7 @@ class HomeController < ApplicationController
 
     current_search = Search.new(query:, user_ip: ip)
     recent_saved_search = Search.where(user_ip: ip).last
-    if recent_saved_search.nil? || !recent_saved_search.similarity?(query,ip)
+    if recent_saved_search.nil? || !recent_saved_search.similarity?(query, ip)
       current_search.save
     elsif recent_saved_search.query.length < query.length
       recent_saved_search.update(query:)

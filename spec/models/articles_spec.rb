@@ -1,7 +1,7 @@
-
-
 describe 'Articles', type: :feature do
-  article = Article.new(title: 'test title',content:Faker::Lorem.paragraph(sentence_count: 3, supplemental: false, random_sentences_to_add: 4))
+  article = Article.new(title: 'test title',
+                        content: Faker::Lorem.paragraph(sentence_count: 3, supplemental: false,
+                                                        random_sentences_to_add: 4))
 
   # validates :title, presence: true, length: { minimum: 5, maximum: 100 }
   # # content must be present and 5 - 500 chars long
@@ -43,7 +43,4 @@ describe 'Articles', type: :feature do
     article.save
     expect(article).to be_valid
   end
-
-
-
 end
