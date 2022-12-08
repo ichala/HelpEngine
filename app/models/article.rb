@@ -10,4 +10,6 @@ class Article < ApplicationRecord
       "lower(title) LIKE :query OR lower(content) LIKE :query", query: "%#{params[:query].downcase}%"
     )
   end
+
+
 end
