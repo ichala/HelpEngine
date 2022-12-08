@@ -1,6 +1,6 @@
 <div class="main " >
   <div class="header">
-    <%= form_with(url: root_path, method: "POST" ) do |form| %>
+    <%= form_with(url: root_path, method: :get, data: {controller:'search', search_target:'form', turbo_frame: "results", turbo_action:'advance', action: 'input->search#submit_query'} ) do |form| %>
       <div class="d-flex justify-content-center">
         <%= form.text_field :query, :class => "form-control search-box",:placeholder => "What are you looking for ?" %>
       </div>
@@ -8,16 +8,9 @@
   </div>
   <div class="results-container d-flex flex-column justify-content-center align-items-center">
     <div class="results">
-      <h1 class="display-5">Search Results :</h1>
-      <div class="card mt-3">
-        <div class="card-header">
-           <h5 class="card-title">  Title</h5>
-        </div>
-        <div class="card-body">
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary justify-self-end">Go somewhere</a>
-        </div>
-      </div>
+      <%= turbo_frame_tag "results" do %>
+      <%= render partial: 'partials/search_results', locals: { articles: @articles } %>
+      <% end %>
     </div>
   </div>
 </div>
