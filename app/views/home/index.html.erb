@@ -9,7 +9,7 @@
   <div class="results-container d-flex flex-column justify-content-center align-items-center">
     <div class="results">
       <%= turbo_frame_tag "results" do %>
-      <%= render partial: 'partials/search_results', locals: { articles: @articles , query: @query} %>
+        <%= render partial: 'partials/search_results', locals: { articles: @articles , query: @query} %>
       <% end %>
     </div>
   </div>
