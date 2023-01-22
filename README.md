@@ -43,7 +43,7 @@
 
 ## Live Demo
 
-[HelpEngine Live Demo](https://helpenginedemo.onrender.com/)
+Coming Soon
 
 ## Authors
 
